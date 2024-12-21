@@ -9,7 +9,7 @@ export const LoginPage = () => {
     e.preventDefault();
 
     try {
-      const response = await fetch("http://localhost:5000/login", {
+      const response = await fetch("http://localhost:5000", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -20,7 +20,8 @@ export const LoginPage = () => {
       const data = await response.json();
 
       if (response.ok) {
-        alert(data.message);
+        // alert(data.message);
+        console.log("added");
       } else {
         setError(data.error);
       }
