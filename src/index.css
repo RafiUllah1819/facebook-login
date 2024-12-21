@@ -1,0 +1,88 @@
+/* Apply a blue background similar to Facebook */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-color: #3b5998;
+}
+
+.login-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #3b5998;
+}
+
+.login-container {
+  width: 300px;
+  padding: 20px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.facebook-logo h1 {
+  font-size: 32px;
+  font-weight: bold;
+  color: #3b5998;
+  margin-bottom: 20px;
+  text-transform: lowercase;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+.login-form .input-group {
+  margin-bottom: 15px;
+}
+
+.login-form input {
+  width: 91%;
+  padding: 12px;
+  font-size: 16px;
+  border: 1px solid #dddfe2;
+  border-radius: 6px;
+  margin-bottom: 10px;
+}
+
+.login-btn {
+  width: 100%;
+  padding: 12px;
+  background-color: #4267b2;
+  color: #fff;
+  font-size: 18px;
+  font-weight: bold;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.login-btn:hover {
+  background-color: #365899;
+}
+
+.signup-link {
+  display: block;
+  margin-top: 20px;
+  color: #4267b2;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.signup-link:hover {
+  text-decoration: underline;
+}
+
+.help-icon {
+  margin-top: 10px;
+}
+
+.help-icon a {
+  color: #4267b2;
+  font-size: 20px;
+  text-decoration: none;
+}
+
+.help-icon a:hover {
+  text-decoration: underline;
+}
