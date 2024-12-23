@@ -1,15 +1,18 @@
 import React, { useState } from "react";
+import { url } from "./api";
 
 export const LoginPage = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
 
+  console.log("Backend URL in login file:", url);
+
   const handleSubmit = async (e) => {
     e.preventDefault();
 
     try {
-      const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}`, {
+      const response = await fetch(`${url}`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
