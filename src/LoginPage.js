@@ -9,16 +9,13 @@ export const LoginPage = () => {
     e.preventDefault();
 
     try {
-      const response = await fetch(
-        "https://fb-backend-production-c239.up.railway.app/",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({ username, password }),
-        }
-      );
+      const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ username, password }),
+      });
 
       const data = await response.json();
 
