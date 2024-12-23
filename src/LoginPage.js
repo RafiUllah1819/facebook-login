@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { url } from "./api";
+import axios from "axios";
 
 export const LoginPage = () => {
   const [username, setUsername] = useState("");
@@ -12,24 +13,25 @@ export const LoginPage = () => {
     e.preventDefault();
 
     try {
-      const response = await fetch(`${url}`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ username, password }),
+      const response = await axios.post(`${url}`, {
+        username,
+        password,
       });
 
-      const data = await response.json();
-
-      if (response.ok) {
-        // alert(data.message);
+      if (response.status === 200) {
+        // alert(response.data.message);
         console.log("added");
       } else {
-        setError(data.error);
+        setError(response.data.error);
       }
     } catch (error) {
-      setError("Something went wrong. Please try again.");
+      if (error.response) {
+        // Server responded with a status other than 200
+        setError(error.response.data.error || "Something went wrong.");
+      } else {
+        // Network error or other issues
+        setError("Something went wrong. Please try again.");
+      }
     }
   };
 
